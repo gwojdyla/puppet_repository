@@ -9,5 +9,5 @@ mod "puppetlabs/concat"
 # Modules from Github using various references
 mod 'notifyme',
   :git => 'git://github.com/gwojdyla/puppet-notifyme',
-  :ref => '80c4f996fbfe24d85374bab4d06333cde21f5b9d'
+  :ref => '987956d15230f8576098d1e098a646d121d08c17'
 
