@@ -43,9 +43,6 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include ::ntp
-}
-
-node 'node01.home' {
+  # include ::ntp
   include ::notifyme
 }
