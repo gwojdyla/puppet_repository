@@ -5,6 +5,7 @@ mod "puppetlabs/apache"
 mod "puppetlabs/ntp"
 mod "puppetlabs/stdlib"
 mod "puppetlabs/concat"
+mod "zack/r10k"
 
 # Modules from Github using various references
 mod 'notifyme',
