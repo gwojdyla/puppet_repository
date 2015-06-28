@@ -50,3 +50,7 @@ node default {
 node 'node01.home' {
   include ::notifyme
 }
+
+node 'master.home' {
+  include r10k::mcollective
+}
