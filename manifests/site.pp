@@ -46,3 +46,7 @@ node default {
   # include ::ntp
   include ::notifyme
 }
+
+node 'node01.home' {
+  include ::notifyme
+}
