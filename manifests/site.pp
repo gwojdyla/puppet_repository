@@ -45,6 +45,7 @@ node default {
   #   class { 'my_class': }
   # include ::ntp
   include ::notifyme
+  include ::ssh
   package {'unzip':
       ensure => present,
   }
@@ -89,6 +90,12 @@ node 'master.home' {
   include ::postfix
   include ::propuppet-apache::worker
   include r10k::mcollective
+  package {'unzip':
+      ensure => present,
+  }
+  package {'java-1.7.0-openjdk-devel':
+      ensure => present,
+  }
 #  include 'docker'
 #  docker::image {'jenkinsci/workflow-demo':
 #      ensure => present,
