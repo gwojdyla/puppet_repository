@@ -45,6 +45,12 @@ node default {
   #   class { 'my_class': }
   # include ::ntp
   include ::notifyme
+  package {'unzip':
+      ensure => present,
+  }
+  package {'java-1.7.0-openjdk-devel':
+      ensure => present,
+  }
 }
 
 node 'node01.home' {
