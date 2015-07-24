@@ -55,6 +55,9 @@ node 'node01.home' {
   package {'unzip':
       ensure => present,
   }
+  package {'java-1.7.0-openjdk-devel':
+      ensure => present,
+  }
 #  class {'mysql':
 #      user => 'mysql',
 #      service_running => false,
