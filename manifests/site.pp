@@ -80,8 +80,8 @@ node 'master.home' {
   include ::postfix
   include ::propuppet-apache::worker
   include r10k::mcollective
-  include 'docker'
-  docker::image {'jenkinsci/workflow-demo':
-      ensure => present,
-  }
+#  include 'docker'
+#  docker::image {'jenkinsci/workflow-demo':
+#      ensure => present,
+#  }
 }
