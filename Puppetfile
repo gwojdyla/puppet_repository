@@ -6,6 +6,7 @@ mod "puppetlabs/ntp"
 mod "puppetlabs/stdlib"
 mod "puppetlabs/concat"
 mod "zack/r10k"
+mod "puppetlabs/docker_platform"
 
 # Modules from Github using various references
 mod 'notifyme',

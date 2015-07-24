@@ -19,7 +19,7 @@
 
 # Define filebucket 'main':
 filebucket { 'main':
-  server => 'master',
+  server => 'master.home',
   path   => false,
 }
 
@@ -49,8 +49,36 @@ node default {
 
 node 'node01.home' {
   include ::notifyme
+  include ::sudo
+  include ::ssh
+  include ::postfix
+#  class {'mysql':
+#      user => 'mysql',
+#      service_running => false,
+#      service_enabled => false,
+#  }
+  propuppet-apache::vhost { 'www.node01.home':
+      port => '81',
+      docroot => "/var/www/www.node01.home",
+      ssl => false,
+      priority => '12',
+  } 
+  propuppet-apache::vhost { 'www.xxx.home':
+      port => '80',
+      docroot => "/var/www/$name",
+      ssl => true,
+      priority => '11',
+  } 
+  # include ::propuppet-apache::load_balancermembers
 }
 
 node 'master.home' {
+  include ::ssh
+  include ::postfix
+  include ::propuppet-apache::worker
   include r10k::mcollective
+  include 'docker'
+  docker::image {'jenkinsci/workflow-demo':
+      ensure => present,
+  }
 }
