@@ -52,6 +52,9 @@ node 'node01.home' {
   include ::sudo
   include ::ssh
   include ::postfix
+  package {'unzip':
+      ensure => present,
+  }
 #  class {'mysql':
 #      user => 'mysql',
 #      service_running => false,
