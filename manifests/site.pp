@@ -39,7 +39,10 @@ Package { allow_virtual => false }
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-node default {
+node 'default' {
+  include ::ssh
+}
+node 'goserver.home' {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
@@ -50,6 +53,10 @@ node default {
       ensure => present,
   }
   package {'java-1.7.0-openjdk-devel':
+      ensure => present,
+  }
+
+  package {'rabbitmq-server':
       ensure => present,
   }
 }
