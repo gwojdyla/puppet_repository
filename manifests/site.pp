@@ -56,9 +56,9 @@ node 'goserver.home' {
       ensure => present,
   }
 
-  package {'rabbitmq-server':
-      ensure => present,
-  }
+#  package {'rabbitmq-server':
+#      ensure => present,
+#  }
 }
 
 node 'node01.home' {
